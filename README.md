@@ -1,10 +1,10 @@
-### O site dos programados maneirão
+### O site dos programador maneirão
 
 ## Primeiro Post
 
 vamos aprender a printar em python.
 
-1. `printn('Oi')`
+1. `print('Oi')`
 
 ```C
 int main(){
