@@ -21,7 +21,13 @@
           <h2>{{ page.description | default: site.description | default: site.github.project_tagline }}</h2>
         </header>
         <section id="downloads" class="clearfix">
-	  {% include navigation.html %}
+	  <nav>
+  	    {% for item in site.data.navigation %}
+    	      <a href="{{ item.link }}" class="button" {% if page.url == item.link %} style="color: rgb(255, 255, 255); background: #102e58;"{% endif %}>
+              <span>{{ item.name }}</span>
+              </a>
+            {% endfor %}
+          </nav>
         </section>
         <hr>
         <section id="main_content">
