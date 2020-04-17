@@ -54,8 +54,9 @@ a {
 }
 
 a.button {
-    background-color: #4CAF50; /* Green */
+    background-color: #111a24;
     border: none;
+    border-radius: 2px;
     color: white;
     text-align: center;
     text-decoration: none;
@@ -63,6 +64,7 @@ a.button {
     font-size: 16px;
     margin: 4px 2px;
     padding: 10px 24px;
+    transition-duration: 0.4s
     cursor: pointer;
 }
 
