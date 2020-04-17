@@ -4,9 +4,11 @@
 
 vamos aprender a printar em python.
 
-1. `print('Oi')`
+1. ```python
+    print('Oi')
+   ```
 
-```c
+2. ```c
 int main(){
   printf("Hello world\n");
 }
