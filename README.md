@@ -1,3 +1,7 @@
-# AnthonyAposta.github.io
+### O site dos programados maneirão
 
-#este é um site 
+## Primeiro Post
+
+vamos aprender a printar em python.
+
+1. `printn('Oi')`
