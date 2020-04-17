@@ -54,6 +54,7 @@ a {
 }
 
 a.button {
+  border-radius: 4px;
   font-weight: bold;
   font-size: 48px;
   color: #000000;
