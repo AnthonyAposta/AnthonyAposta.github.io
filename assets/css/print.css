@@ -53,18 +53,17 @@ a {
   color: #d5000d;
 }
 
-a.button {
-    background-color: #111a24;
-    border: none;
-    border-radius: 2px;
-    color: white;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    padding: 10px 24px;
-    cursor: pointer;
+a.btn-group.button {
+  background-color: #111a24;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  float: left;
+  cursor: pointer;
 }
 
 header {
