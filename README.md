@@ -2,14 +2,14 @@
 
 ## Primeiro Post
 
-vamos aprender a printar em python.
+vamos aprender a printar.
 
-1. 
+1. Em python
 ```python
 print('Oi')
 ```
 
-2. 
+2. Em C
 ```c
 int main(){
   printf("Hello world\n");
