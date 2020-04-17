@@ -4,3 +4,18 @@ name: Anthony João Bet.
 position: Graduando em Física.
 ---
 Meus principais interesses são: Computação, simulação, neurociência e inteligência aritifcial.
+Meus principais interesses são: Computação, simulação, neurociência e inteligência aritifcial.
+Meus principais interesses são: Computação, simulação, neurociência e inteligência aritifcial.
+Meus principais interesses são: Computação, simulação, neurociência e inteligência aritifcial.
+Meus principais interesses são: Computação, simulação, neurociência e inteligência aritifcial.
+Meus principais interesses são: Computação, simulação, neurociência e inteligência aritifcial.
+Meus principais interesses são: Computação, simulação, neurociência e inteligência aritifcial.
+Meus principais interesses são: Computação, simulação, neurociência e inteligência aritifcial.
+Meus principais interesses são: Computação, simulação, neurociência e inteligência aritifcial.
+Meus principais interesses são: Computação, simulação, neurociência e inteligência aritifcial.
+Meus principais interesses são: Computação, simulação, neurociência e inteligência aritifcial.
+Meus principais interesses são: Computação, simulação, neurociência e inteligência aritifcial.
+Meus principais interesses são: Computação, simulação, neurociência e inteligência aritifcial.
+Meus principais interesses são: Computação, simulação, neurociência e inteligência aritifcial.
+Meus principais interesses são: Computação, simulação, neurociência e inteligência aritifcial.
+Meus principais interesses são: Computação, simulação, neurociência e inteligência aritifcial.
