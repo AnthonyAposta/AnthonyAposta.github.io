@@ -1,5 +1,5 @@
 ---
-short_name: romulo
+short_name: Rômulo
 name: Rômulo Cenci
 position: Writer
 ---
