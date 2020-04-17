@@ -53,7 +53,7 @@ a {
   color: #d5000d;
 }
 
-navbar {
+a.button {
   font-weight: bold;
   font-size: 48px;
   color: #000000;
