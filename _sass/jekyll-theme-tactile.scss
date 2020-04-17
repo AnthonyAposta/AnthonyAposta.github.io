@@ -119,7 +119,7 @@ a.button {
     cursor: pointer;
 }
 a.button:hover {
-  transition-duration: 0.4s;
+  transition-duration: 1.0s;
   background: #102e58 ; /* Old browsers */
   background: -moz-linear-gradient(top,  #102e58  0%, #102e58  100%); /* FF3.6+ */
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#102e58 ), color-stop(100%,#102e58 )); /* Chrome,Safari4+ */
