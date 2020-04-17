@@ -1,3 +1,4 @@
-## O site dos programador maneirão
-
-
+---
+layout: default
+---
+# O site dos programador maneirão
