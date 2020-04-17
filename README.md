@@ -6,7 +6,7 @@ vamos aprender a printar em python.
 
 1. `printn('Oi')`
 
-```
+```C
 int main(){
   printf("Hello world\n");
 }
