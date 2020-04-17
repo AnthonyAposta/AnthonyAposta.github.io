@@ -54,10 +54,14 @@ a {
 }
 
 a.button {
-  border-radius: 4px;
-  font-weight: bold;
-  font-size: 48px;
-  color: #000000;
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
 }
 
 header {
