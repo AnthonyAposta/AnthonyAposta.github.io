@@ -1,6 +1,6 @@
 ## O site dos programador maneirão
 
-# Primeiro Post
+## Primeiro Post
 
 vamos aprender a printar.
 
