@@ -22,11 +22,13 @@
         </header>
         <section id="downloads" class="clearfix">
 	  <nav>
+	  <div class="btn_group">
   	    {% for item in site.data.navigation %}
     	      <a href="{{ item.link }}" class="button" {% if page.url == item.link %} style="color: rgb(255, 255, 255); background: #102e58;"{% endif %}>
               <span>{{ item.name }}</span>
               </a>
             {% endfor %}
+	  </div>
           </nav>
         </section>
         <hr>

@@ -105,7 +105,7 @@ header h2 {
   margin-bottom: 40px;
 }
 
-a.btn-group.button {
+a.btn-group a.button {
     background-color: #111a24;
     border: none;
     color: white;
@@ -116,7 +116,7 @@ a.btn-group.button {
     font-size: 16px;
     cursor: pointer;
 }
-a.btn-group.button:hover {
+a.btn-group a.button:hover {
   transition-duration: 1.0s;
   background: #102e58 ; /* Old browsers */
   background: -moz-linear-gradient(top,  #102e58  0%, #102e58  100%); /* FF3.6+ */
