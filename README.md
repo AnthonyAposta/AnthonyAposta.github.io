@@ -5,3 +5,9 @@
 vamos aprender a printar em python.
 
 1. `printn('Oi')`
+
+```
+int main(){
+  printf("Hello world\n");
+}
+```
