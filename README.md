@@ -35,7 +35,7 @@ layout: post
 title: "Titulo do post"
 author: Seu short_name
 ---
-um texto do post
+corpo do texto
 ```
 </li>
 
