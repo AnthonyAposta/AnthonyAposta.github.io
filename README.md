@@ -41,5 +41,5 @@ Todas as postagens devem estar em arquivos `.md` dentro da pasta `_posts`
       corpo do texto
 
  </li>
-
+</ol>
 
