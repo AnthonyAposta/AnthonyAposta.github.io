@@ -1,23 +1,42 @@
 # Instruções para os membros
 
-## Como fazer uma postagem em seu nome
+## Como criar sua pagina de membro
 
 Se você é um novo membro, siga essas instruções:
 
 <ol>
 <li>crie o arquivo seu_nome.md dentro da pastas _authors, por exemplo: `_authors/anthony.md`</li>
-<li>Dentro do aquivo insira o texto
+<li>Dentro do aquivo insira o texto:
    
-   ```
+```
 ---
 short_name: o nome que irá assinar os posts
 name: seu nome
 position: sua ocupação  
 ---
-um texto sobre você```
-
-
+um texto sobre você
+```
 </li>
-<li>Third item</li>
-<li>Fourth item</li>
 </ol> 
+
+Agora você você já ira aparecer na pagina de membros do site.
+
+## Como fazer uma postagem em seu nome
+
+Todas as postagens devem estar em arquivos `.md` dentro da pasta `_posts`
+
+<ol>
+   <li>crie o arquivo no formato ANO-MES-DIA-ENDERECO.md dentro da pasta _posts, por exemplo: `_authors/2020-04-18-ann1.md`  </li>
+   <li>Dentro do aquivo insira o texto:
+   
+```
+---
+layout: post
+title: "Titulo do post"
+author: Seu short_name
+---
+um texto do post
+```
+</li>
+
+
