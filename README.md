@@ -41,4 +41,5 @@ corpo do texto
 ```
 </li>
 </ol>
-pronto! Agora você ja sabe como fazer posts. FIM! 
+Agora você ja sabe como fazer posts. 
+# FIM! 
