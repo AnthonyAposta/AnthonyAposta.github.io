@@ -32,14 +32,14 @@ Todas as postagens devem estar em arquivos `.md` dentro da pasta `_posts`
    </li>
    <li>
       Dentro do aquivo insira o texto:
-      <code>
+
          ---
          layout: post
          title: "Titulo do post"
          author: Seu short_name
          ---
          corpo do texto
-      </code>
+
  </li>
 
 
