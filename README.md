@@ -27,19 +27,19 @@ Todas as postagens devem estar em arquivos `.md` dentro da pasta `_posts`
 
 <ol>
    <li>
-   crie o arquivo no formato <code>ANO-MES-DIA-ENDERECO.md</code> dentro da pasta  <code>_posts</code>, por exemplo:
+   crie o arquivo no formato <code>ANO-MES-DIA-ENDERECO.md</code> dentro da pasta  <code>_posts</code>, por exemplo:\n
    <code>_authors/2020-04-18-ann1.md</code>
    </li>
-   <li>Dentro do aquivo insira o texto:
-   
-```
----
-layout: post
-title: "Titulo do post"
-author: Seu short_name
----
-corpo do texto
-```
-</li>
+   <li>
+      Dentro do aquivo insira o texto:
+      <code>
+         ---
+         layout: post
+         title: "Titulo do post"
+         author: Seu short_name
+         ---
+         corpo do texto
+      </code>
+ </li>
 
 
