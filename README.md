@@ -26,7 +26,10 @@ Agora você você já ira aparecer na pagina de membros do site.
 Todas as postagens devem estar em arquivos `.md` dentro da pasta `_posts`
 
 <ol>
-   <li>crie o arquivo no formato <code>ANO-MES-DIA-ENDERECO.md</code> dentro da pasta  <code>_posts</code>, por exemplo:  <code>_authors/2020-04-18-ann1.md</code>  </li>
+   <li>
+   crie o arquivo no formato <code>ANO-MES-DIA-ENDERECO.md</code> dentro da pasta  <code>_posts</code>, por exemplo:
+   <code>_authors/2020-04-18-ann1.md</code>
+   </li>
    <li>Dentro do aquivo insira o texto:
    
 ```
