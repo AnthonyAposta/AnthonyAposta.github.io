@@ -1,4 +1,4 @@
-# Instruções para os membros
+# Instruções Para os Membros
 
 ## Como criar sua pagina de membro
 
