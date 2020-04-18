@@ -5,7 +5,7 @@
 Se você é um novo membro, siga essas instruções:
 
 <ol>
-<li>crie o arquivo <code>seu_nome.md</code> dentro da pastas <code>_authors</code>, por exemplo: <code>_authors/anthony.md</code></li>
+<li>Crie o arquivo <code>seu_nome.md</code> dentro da pastas <code>_authors</code>, por exemplo: <code>_authors/anthony.md</code></li>
 <li>Dentro do aquivo insira o texto:
    
 ```
@@ -27,7 +27,7 @@ Todas as postagens devem estar em arquivos `.md` dentro da pasta `_posts`
 
 <ol>
 <li>
-crie o arquivo no formato <code>ANO-MES-DIA-ENDERECO.md</code> dentro da pasta  <code>_posts</code>,<br>por exemplo:
+Crie o arquivo no formato <code>ANO-MES-DIA-ENDERECO.md</code> dentro da pasta  <code>_posts</code>,<br>por exemplo:
 <code>_authors/2020-04-18-ann1.md</code></li>
 <li>Dentro do aquivo insira o texto:
 
