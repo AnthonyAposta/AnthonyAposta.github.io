@@ -5,7 +5,7 @@
 Se você é um novo membro, siga essas instruções:
 
 <ol>
-<li>crie o arquivo <code>`seu_nome.md</code> dentro da pastas _authors, por exemplo: <code>_authors/anthony.md`</code></li>
+<li>crie o arquivo <code>seu_nome.md</code> dentro da pastas <code>_authors</code>, por exemplo: <code>_authors/anthony.md</code></li>
 <li>Dentro do aquivo insira o texto:
    
 ```
@@ -42,4 +42,5 @@ corpo do texto
 </li>
 </ol>
 Agora você ja sabe como fazer posts. 
+
 # FIM! 
