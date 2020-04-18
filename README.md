@@ -41,6 +41,8 @@ corpo do texto
 ```
 </li>
 </ol>
+Sua publicação estará no endereço <code>anthonyaposta.github.io/ANO/MES/DIA/ENDERECO.html</code>
+
 Agora você ja sabe como fazer posts. 
 
 # FIM! 
