@@ -3,6 +3,12 @@ description: Jogatina do Anthony
 
 theme: jekyll-theme-tactile
 
+markdown: kramdown
+
+kramdown:
+  input: GFM
+  hard_wrap: false
+
 collections:
   authors:
     output: true
