@@ -119,6 +119,7 @@ a.button {
 }
 a.button:hover {
   transition-duration: 1.0s;
+  color: white;
   background: #102e58 ; /* Old browsers */
   background: -moz-linear-gradient(top,  #102e58  0%, #102e58  100%); /* FF3.6+ */
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#102e58 ), color-stop(100%,#102e58 )); /* Chrome,Safari4+ */
