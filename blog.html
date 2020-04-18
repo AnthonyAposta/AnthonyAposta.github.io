@@ -6,7 +6,9 @@ layout: default
 <ul>
   {% for post in site.posts %}
     <li>
-      <h2><a href="{{ post.url }}">{{ post.title }}</a> - {{ post.author }}</h2>
+      {% assign author = site.authors | where: 'short_name', post.author | first %}
+      <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+      <h3>{{ page.date | date_to_string }} by {{ <a href="{{ author.url }}">{{ author.name }}</a> }}</h3>
       {{ post.excerpt }}
     </li>
   {% endfor %}
