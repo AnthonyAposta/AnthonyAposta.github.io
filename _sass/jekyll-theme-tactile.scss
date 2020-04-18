@@ -120,14 +120,7 @@ a.button {
 a.button:hover {
   transition-duration: 1.0s;
   color: white;
-  background: #102e58 ; /* Old browsers */
-  background: -moz-linear-gradient(top,  #102e58  0%, #102e58  100%); /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#102e58 ), color-stop(100%,#102e58 )); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top,  #102e58  0%,#102e58  100%); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top,  #102e58  0%,#102e58  100%); /* Opera 11.10+ */
-  background: -ms-linear-gradient(top,  #102e58  0%,#102e58  100%); /* IE10+ */
-  background: linear-gradient(to top,  #102e58  0%,#102e58 , 100%); /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#102e58 ', endColorstr='#102e58 ',GradientType=0 ); /* IE6-9 */
+  background-color: #102e58 ; /* Old browsers */
 }
 
 a.button span {
