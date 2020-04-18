@@ -116,9 +116,10 @@ a.button {
     margin: 4px 2px;
     padding: 10px 24px;
     cursor: pointer;
+    transition-duration: 0.4s;
 }
 a.button:hover {
-  transition-duration: 1.0s;
+  transition-duration: 0.4s;
   color: white;
   background-color: #102e58 ; /* Old browsers */
 }
