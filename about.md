@@ -1,6 +1,6 @@
 ---
 layout: default
 ---
-# About page
+# Sobre o TITULO SO SITE
 
-This page tells you a little bit about me.
+Este é um site criado por amigos e amigos de amigos, com o intuito de compartilhar projetos pessoais ou em conjunto, de diversos níveis e áreas do conhecimento.
