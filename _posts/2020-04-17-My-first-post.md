@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "My first post"
-author: Rômulo
+author: Rômulo, Tony
 ---
 
 Esse é um teste do primeiro post criado aqui, esse texto será mostrado, blablabla.
