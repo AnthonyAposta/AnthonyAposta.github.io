@@ -11,8 +11,6 @@ kramdown:
 
 collections:
   authors:
-    - Rômulo
-    - Tony
     output: true
 
 defaults:
