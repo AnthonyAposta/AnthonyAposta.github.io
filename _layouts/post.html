@@ -5,13 +5,12 @@ layout: default
 <p>
   {{ page.date | date_to_string }}
   
-  <!--
   {% assign author = site.authors | where: 'short_name', page.author | first %}
   {% if author %}
     - <a href="{{ author.url }}">{{ author.name }}</a>
   {% endif %}
-  -->
   
+  <!--
   {% assign authorCount = page.authors | size %}
   {% if authorCount == 0 %}
     No author
@@ -28,6 +27,6 @@ layout: default
         {% endif %}
     {% endfor %}
   {% endif %}
+  -->
 </p>
-
 {{ content }}
