@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="/assets/css/style.css?v=">
+    <!--<link rel="stylesheet" type="text/css" href="/assets/css/print.css" media="print">-->
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+<!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Rede Neural do Zero: Introdução | Lab 208</title>
+<meta name="generator" content="Jekyll v3.8.6" />
+<meta property="og:title" content="Rede Neural do Zero: Introdução" />
+<meta name="author" content="Tony" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="O objetivo desta série de tutoriais é construir uma rede neural artificial simples, do zero, utilizando apenas python puro e a biblioteca Numpy e mostrar como e porque tais redes funcionam, partindo da estrutura funcional mais simples da rede, o perceptron." />
+<meta property="og:description" content="O objetivo desta série de tutoriais é construir uma rede neural artificial simples, do zero, utilizando apenas python puro e a biblioteca Numpy e mostrar como e porque tais redes funcionam, partindo da estrutura funcional mais simples da rede, o perceptron." />
+<link rel="canonical" href="http://localhost:4000/2020/04/18/ann1.html" />
+<meta property="og:url" content="http://localhost:4000/2020/04/18/ann1.html" />
+<meta property="og:site_name" content="Lab 208" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-04-18T00:00:00-03:00" />
+<script type="application/ld+json">
+{"datePublished":"2020-04-18T00:00:00-03:00","description":"O objetivo desta série de tutoriais é construir uma rede neural artificial simples, do zero, utilizando apenas python puro e a biblioteca Numpy e mostrar como e porque tais redes funcionam, partindo da estrutura funcional mais simples da rede, o perceptron.","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2020/04/18/ann1.html"},"url":"http://localhost:4000/2020/04/18/ann1.html","author":{"@type":"Person","name":"Tony"},"headline":"Rede Neural do Zero: Introdução","dateModified":"2020-04-18T00:00:00-03:00","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+    <div id="container">
+      <div class="inner">
+        <header>
+          <h1>Lab|208</h1>
+          <h2>a descrição do site - nome nao definitivo</h2>
+        </header>
+        <section id="downloads" class="clearfix">
+	  <nav>
+  	    
+    	      <a href="/" class="button" >
+              <span>Home</span>
+              </a>
+            
+    	      <a href="/about.html" class="button" >
+              <span>Sobre</span>
+              </a>
+            
+    	      <a href="/blog.html" class="button" >
+              <span>Blog</span>
+              </a>
+            
+    	      <a href="/authors.html" class="button" >
+              <span>Membros</span>
+              </a>
+            
+          </nav>
+        </section>
+        <hr>
+        <section id="main_content">
+          <h1>Rede Neural do Zero: Introdução</h1>
+<p>
+  18 Apr 2020
+  
+  
+  
+    - <a href="/authors/anthony.html">Anthony João Bet</a>
+  
+  
+  <!--
+  
+  
+    No author
+  
+  -->
+</p>
+<p>O objetivo desta série de tutoriais é construir uma rede neural artificial simples, do zero, utilizando apenas python puro e a biblioteca Numpy e mostrar como e porque tais redes funcionam, partindo da estrutura funcional mais simples da rede, o perceptron.</p>
+
+<h2 id="rede-neural-e-suas-estrutras-básicas">Rede Neural e Suas Estrutras Básicas</h2>
+
+<p>Uma rede neural artificial (muito referenciada como ANN acrônimo para Artificial Neural Network ) pode ser construída com três conceitos: neurônios, conexões (pesos), e camadas.
+ O neurônio é a unidade de processamento da rede, ele está localizado em uma camada, recebe informação dos neurônios da camada anterior, processa  e envia informações para camada posterior através das conexões, cada neurônio de uma camada está totalmente conectado com todos os neurônios da camada posterior. Perceba que existe uma ordem, uma direção para onde a informação se propaga, a cada passo de tempo a informação é propagada de uma camada para outra, partindo da camada de entrada até chegar na camada de saída.</p>
+
+<p align="center">
+  <img src="/assets/images/anthony/netexapleaan1.png" alt="Rede neural com três camadas" width="350" />
+</p>
+<p align="center">
+  Figura 1: rede neural com três camadas. Fonte: wikipedia.org
+</p>
+
+<p>Vejamos o exemplo da figura 1. Esta rede é formada por três camadas, a primeira é a camada de entrada, a segunda é a cama escondida (hidden layer) e a terceira camada é a camada de saída.</p>
+
+<p>A primeira camada não faz processamento algum, ela é preenchida pelo dados do problema. Se esta fosse uma rede que classifica dígitos por exemplo, a camada de entrada guardaria a informação de uma imagem (a imagem que representa o digito), cada “neurônio” poderia guardar a cor de um pixel e o passo inicial seria propagar essa informação para a segunda camada.</p>
+
+<p>A segunda camada é o que chamamos de camada escondida, uma rede pode ter quantas camadas escondidas você quiser, se esse for o caso chamamos a rede de profunda (deep neural network). Esta camada processa os dados de entrada e enviar para a camada de saída.</p>
+
+<p>Por último, mas não menos importante, temos a terceira camada. A terceira camada é parecida com a camada escondida, a diferença é que utilizamos seu sinal como resultado pra predição ou classificação e muitas vezes sua função de ativação é diferente. Voltando ao exemplo da classificação de dígitos, a camada de saída seria uma distribuição de probabilidades sobre os possíveis dígitos que podem ser classificados, cada neurônio estaria associado a uma possível classe de um dígito, e seu valor seria a probabilidade daquele dígito pertencer àquela classe.</p>
+
+<p>No próximo artigo vamos trabalhar com as equações que regem as redes neurais, mas antes de seguir em frente na série de tutoriais vejam esse <a href="https://www.youtube.com/watch?v=aircAruvnKk">vídeo do canal 3Blue1Brow</a>, é um espetáculo e possui legendas em português.</p>
+
+<p>Esta série de tutoriais é baseada nas <a href="https://machine-learning-for-physicists.org/">aulas</a> do Prof. Dr. Florian Marquardt, e em tudo que eu aprendi sobre a área durante a graduação em física. Se você quiser aprender mais sobre python e também sobre redes neurais, não deixe de visitar o <a href="https://www.youtube.com/user/sentdex">canal</a> do Sentdex e seu <a href="https://pythonprogramming.net/">site</a>, conteúdo de qualidade sem enrolação.</p>
+
+
+
+        </section>
+      </div>
+    </div>
+
+    
+  </body>
+</html>
