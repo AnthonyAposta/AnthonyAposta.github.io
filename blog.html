@@ -9,10 +9,33 @@ layout: default
       <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
       <p>
         {{ post.date | date_to_string }}
-        {% assign author = site.authors | where: 'short_name', post.author | first %}
+
+        {% assign authorCount = post.author | size %}
+        {% if authorCount == 0 %}
+          No author
+        {% elsif authorCount == 1 %}
+          {% assign author_link = site.authors | where: 'short_name', author | first %}
+          - <a href="{{ author_link.url }}">{{ author_link.name }}</a>
+        {% else %}
+          {% for author in post.author %}
+            {% if forloop.first %}
+              {% assign author_link = site.authors | where: 'short_name', author | first %}
+              - <a href="{{ author_link.url }}">{{ author_link.name }}</a>
+            {% elsif forloop.last %}
+              {% assign author_link = site.authors | where: 'short_name', author | first %}
+              e <a href="{{ author_link.url }}">{{ author_link.name }}</a>
+            {% else %}
+              {% assign author_link = site.authors | where: 'short_name', author | first %}
+              , <a href="{{ author_link.url }}">{{ author_link.name }}</a>
+            {% endif %}
+          {% endfor %}
+        {% endif %}
+	<!---
+        
         {% if author %}
           - <a href="{{ author.url }}">{{ author.name }}</a>
         {% endif %}
+	-->
         {{ post.excerpt }}
       </p>
     </li>

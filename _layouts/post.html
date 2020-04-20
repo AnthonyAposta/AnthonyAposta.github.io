@@ -4,29 +4,26 @@ layout: default
 <h1>{{ page.title }}</h1>
 <p>
   {{ page.date | date_to_string }}
-  
-  {% assign author = site.authors | where: 'short_name', page.author | first %}
-  {% if author %}
-    - <a href="{{ author.url }}">{{ author.name }}</a>
-  {% endif %}
-  
-  <!--
-  {% assign authorCount = page.authors | size %}
+
+  {% assign authorCount = page.author | size %}
   {% if authorCount == 0 %}
     No author
   {% elsif authorCount == 1 %}
-    {{ page.authors | first }}
+    {% assign author_link = site.authors | where: 'short_name', author | first %}
+    - <a href="{{ author_link.url }}">{{ author_link.name }}</a>
   {% else %}
-    {% for author in page.authors %}
-        {% if forloop.first %}
-            {{ author }}
-        {% elsif forloop.last %}
-            and {{ author }}
-        {% else %}
-            , {{ author }}
-        {% endif %}
+    {% for author in page.author %}
+       {% if forloop.first %}
+         {% assign author_link = site.authors | where: 'short_name', author | first %}
+         - <a href="{{ author_link.url }}">{{ author_link.name }}</a>
+       {% elsif forloop.last %}
+         {% assign author_link = site.authors | where: 'short_name', author | first %}
+         e <a href="{{ author_link.url }}">{{ author_link.name }}</a>
+       {% else %}
+         {% assign author_link = site.authors | where: 'short_name', author | first %}
+         , <a href="{{ author_link.url }}">{{ author_link.name }}</a>
+       {% endif %}
     {% endfor %}
   {% endif %}
-  -->
 </p>
 {{ content }}
