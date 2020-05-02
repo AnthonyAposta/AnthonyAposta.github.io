@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="/assets/css/style.css?v=">
+    <!--<link rel="stylesheet" type="text/css" href="/assets/css/print.css" media="print">-->
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+<!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Algoritimo de classificação K-Nearest Neighbors | Lab 208</title>
+<meta name="generator" content="Jekyll v3.8.6" />
+<meta property="og:title" content="Algoritimo de classificação K-Nearest Neighbors" />
+<meta name="author" content="Tony" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="O site analyticsvidhya compilou em seu blog diversos projetos de machine learning, divididos em três níveis de dificuldade, iniciante, intermediário e avançado. Nesta série de tutorias iremos completar seis destes projetos/desafios, sendo eles, dois em cada nível de dificuldade. Cada projeto será dividido em dois artigos, um para explicar o algoritmo utilizado, e o outro para explicar como aplicar tal algoritmo no problema escolhido. O primeiro projeto escolhido é o problema de classificação do banco de dados Iris. Este pequeno banco de dados é um clássico na área, e para atacar um problema tão simples iremos utilizar um algoritmo igualmente simples, chamado K-Nearest Neighbors (KNN). K-Nearest Neighbors Este algoritmo funciona de uma forma muito intuitiva, ele irá classificar um novo ponto comparando a posição deste ponto com a classe dos seus k vizinhos mais proximos. Vejamos um exemplo, suponha que temos os seguintes dados:" />
+<meta property="og:description" content="O site analyticsvidhya compilou em seu blog diversos projetos de machine learning, divididos em três níveis de dificuldade, iniciante, intermediário e avançado. Nesta série de tutorias iremos completar seis destes projetos/desafios, sendo eles, dois em cada nível de dificuldade. Cada projeto será dividido em dois artigos, um para explicar o algoritmo utilizado, e o outro para explicar como aplicar tal algoritmo no problema escolhido. O primeiro projeto escolhido é o problema de classificação do banco de dados Iris. Este pequeno banco de dados é um clássico na área, e para atacar um problema tão simples iremos utilizar um algoritmo igualmente simples, chamado K-Nearest Neighbors (KNN). K-Nearest Neighbors Este algoritmo funciona de uma forma muito intuitiva, ele irá classificar um novo ponto comparando a posição deste ponto com a classe dos seus k vizinhos mais proximos. Vejamos um exemplo, suponha que temos os seguintes dados:" />
+<link rel="canonical" href="http://localhost:4000/2020/05/01/knn.html" />
+<meta property="og:url" content="http://localhost:4000/2020/05/01/knn.html" />
+<meta property="og:site_name" content="Lab 208" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-05-01T00:00:00-03:00" />
+<script type="application/ld+json">
+{"headline":"Algoritimo de classificação K-Nearest Neighbors","dateModified":"2020-05-01T00:00:00-03:00","datePublished":"2020-05-01T00:00:00-03:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2020/05/01/knn.html"},"url":"http://localhost:4000/2020/05/01/knn.html","author":{"@type":"Person","name":"Tony"},"description":"O site analyticsvidhya compilou em seu blog diversos projetos de machine learning, divididos em três níveis de dificuldade, iniciante, intermediário e avançado. Nesta série de tutorias iremos completar seis destes projetos/desafios, sendo eles, dois em cada nível de dificuldade. Cada projeto será dividido em dois artigos, um para explicar o algoritmo utilizado, e o outro para explicar como aplicar tal algoritmo no problema escolhido. O primeiro projeto escolhido é o problema de classificação do banco de dados Iris. Este pequeno banco de dados é um clássico na área, e para atacar um problema tão simples iremos utilizar um algoritmo igualmente simples, chamado K-Nearest Neighbors (KNN). K-Nearest Neighbors Este algoritmo funciona de uma forma muito intuitiva, ele irá classificar um novo ponto comparando a posição deste ponto com a classe dos seus k vizinhos mais proximos. Vejamos um exemplo, suponha que temos os seguintes dados:","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+    <div id="container">
+      <div class="inner">
+        <header>
+          <h1>Lab|208</h1>
+          <h2>Clusterizando conhecimento.</h2>
+        </header>
+        <section id="downloads" class="clearfix">
+	  <nav>
+  	    
+    	      <a href="/" class="button" >
+              <span>Home</span>
+              </a>
+            
+    	      <a href="/about.html" class="button" >
+              <span>Sobre</span>
+              </a>
+            
+    	      <a href="/blog.html" class="button" >
+              <span>Blog</span>
+              </a>
+            
+    	      <a href="/authors.html" class="button" >
+              <span>Membros</span>
+              </a>
+            
+          </nav>
+        </section>
+        <hr>
+        <section id="main_content">
+          <h1>Algoritimo de classificação K-Nearest Neighbors</h1>
+<p>
+  01 May 2020
+
+  
+  
+    
+       
+         
+         - <a href="/authors/anthony.html">Anthony João Bet</a>
+       
+    
+  
+</p>
+<p>O site <a href="https://www.analyticsvidhya.com/blog/2018/05/24-ultimate-data-science-projects-to-boost-your-knowledge-and-skills/">analyticsvidhya</a> compilou em seu blog diversos projetos de machine learning, divididos em três níveis de dificuldade, 
+iniciante, intermediário e avançado. Nesta série de tutorias iremos completar seis destes projetos/desafios, 
+sendo eles, dois em cada nível de dificuldade. Cada projeto será dividido em dois artigos, um para explicar o algoritmo utilizado, 
+e o outro para explicar como aplicar tal algoritmo no problema escolhido.</p>
+
+<p>O primeiro projeto escolhido é o problema de classificação do banco de dados Iris. Este pequeno banco de dados é um clássico na área, e para atacar um problema tão simples iremos utilizar um algoritmo igualmente simples, chamado K-Nearest Neighbors (KNN).</p>
+
+<h2 id="k-nearest-neighbors">K-Nearest Neighbors</h2>
+
+<p>Este algoritmo funciona de uma forma muito intuitiva, ele irá classificar um novo ponto comparando a posição deste ponto com a classe dos seus k vizinhos mais proximos.</p>
+
+<p>Vejamos um exemplo, suponha que temos os seguintes dados:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">dados</span> <span class="o">=</span> <span class="p">{</span> 
+          <span class="s">'red'</span><span class="p">:</span> <span class="p">[</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> 
+                   <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> 
+                   <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.5</span><span class="p">]],</span>
+
+          <span class="s">'blue'</span><span class="p">:</span> <span class="p">[</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span>
+                    <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span>
+                    <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]]</span>
+        <span class="p">}</span>
+
+<span class="n">novo_ponto</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span>
+</code></pre></div></div>
+
+<p>Esses dados possuem duas classes, ‘red’ e ‘blue’ e cada classe possui três pontos. Para classificar o novo ponto o algoritmo irá comparar a distancia entre
+o novo ponto e todos os outro pontos dos dados e então irá atribuir ao novo ponto a classe que pertencer à maioria dos seus K vizinhos mais próximos. Vamos
+plotar os dados e o novo ponto para entender melhor.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+
+<span class="n">plt</span><span class="p">.</span><span class="n">style</span><span class="p">.</span><span class="n">use</span><span class="p">(</span><span class="s">'seaborn-whitegrid'</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">dados</span><span class="p">:</span>
+    <span class="p">[</span><span class="n">plt</span><span class="p">.</span><span class="n">scatter</span><span class="p">(</span> <span class="n">ponto</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>  <span class="n">ponto</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="n">k</span> <span class="p">)</span> <span class="k">for</span> <span class="n">ponto</span> <span class="ow">in</span> <span class="n">dados</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="p">]</span>
+
+<span class="n">plt</span><span class="p">.</span><span class="n">scatter</span><span class="p">(</span> <span class="n">novo_ponto</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">novo_ponto</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="s">'black'</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></div>
+<p align="center">
+  <img src="/assets/images/anthony/knnexample.png" alt="dados exemplot" width="500" />
+</p>
+
+<p>Se escolhermos k=3, vemos que os três vizinho mais próximos do novo ponto são dois pontos azuis e um ponto vermelho, dessa forma iremos classificar
+o novo ponto como um ponto da classe ‘blue’. Você deve ter cuidado quando for escolher um valor de K para que não haja empate no momento da contagem das classes.
+Por exemplo, se eu escolher k=2, em algum momento pode ser que os dois vizinhos mais próximos sejam um vermelho e um azul, 
+dessa forma o algoritmo não terá como decidir qual é a classe do novo ponto.</p>
+
+<p>Nós falamos sobre vizinhos mais próximos, então é natural que surja a pergunta: Qual a métrica utilizada para medir essas distâncias?
+A métrica utilizada irá depender to tipo de problema que estamos tentando resolver, por simplicidade iremos utilizar a distancia euclidiana.</p>
+
+<p>A acuracia deste algoritimo é alta, 
+mas ele não é eficiente para grandes quantidades de dados, já que em cada nova classificação é necessário
+calcular a distância entre o novo ponto e todos os pontos do dataset, 
+para tentar contornar esse problema existem variações onde se calcula a distancia apenas
+com relação aos dados que estão dentro de um círculo centrado no novo ponto, isso aumenta bastante a eficiência do algoritmo.</p>
+
+<p>No tutorial iremos utilizar o modulo <a href="https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsClassifier.html">KNeighborsClassifier</a>
+da biblioteca <a href="https://scikit-learn.org/stable/index.html">Scikit-Learn</a>. Com este módulo também é possível utilizar as variações do KNN e diversas métricas, 
+não deixe de ler a documentação.</p>
+
+<p>No proximo artigo iremos aplicar o KNN no banco de dados Iris. Obrigado pela leitura e até a próxima.</p>
+
+<h1 id="fim">FIM!</h1>
+
+
+
+        </section>
+      </div>
+    </div>
+
+    
+  </body>
+</html>
