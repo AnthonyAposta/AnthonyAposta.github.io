@@ -86,7 +86,7 @@ blz, agora é so clonar o repositorio no seu PC e dentro do repo rodar o comando
 
 ```bundle exec jekyll serve```
 
-clque no link em ```Server address:```  para abrir o site.
+clique no link em ```Server address:```  para abrir o site.
 
 Mais ifos sobre a instalação do Jekyll em [https://jekyllrb.com/docs/installation/ubuntu/](https://jekyllrb.com/docs/installation/ubuntu/)
 
