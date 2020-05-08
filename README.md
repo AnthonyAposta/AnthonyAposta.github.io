@@ -58,27 +58,47 @@ Ubuntu:
 
 ```sudo apt-get install ruby-full build-essential zlib1g-dev```
 
-Fedora
+Fedora:
+
 ```sudo dnf install ruby ruby-devel @development-tools```
 
-Debian
+Debian:
+
 ```sudo apt-get install ruby-full build-essential```
 
-Gentoo Linux
+Gentoo Linux:
+
 ```sudo emerge -av jekyll```
 or
+
 ```sudo emerge --ask --verbose jekyll```
 
 ArchLinux:
+
 ```sudo pacman -S ruby base-devel```
 
 openSUSE:
+
 ```sudo zypper install -t pattern devel_ruby devel_C_C++```
 
 Clear Linux:
+
 ```sudo swupd bundle-add ruby-basic```
 
 As proximas instruções são comuns a todos os sistemas:
+
+para configuras o caminho de instalação:
+
+```
+echo '# Install Ruby Gems to ~/gems' >> ~/.bashrc
+echo 'export GEM_HOME="$HOME/gems"' >> ~/.bashrc
+echo 'export PATH="$HOME/gems/bin:$PATH"' >> ~/.bashrc
+source ~/.bashrc
+```
+para instalar:
+
+```gem install jekyll bundler```
+
 
 
 # FIM! 
