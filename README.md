@@ -87,7 +87,7 @@ Clear Linux:
 
 As proximas instruções são comuns a todos os sistemas:
 
-para configuras o caminho de instalação:
+para configurar o caminho de instalação:
 
 ```
 echo '# Install Ruby Gems to ~/gems' >> ~/.bashrc
@@ -99,6 +99,10 @@ para instalar:
 
 ```gem install jekyll bundler```
 
+blz, agora é so clonar o repositorio no seu PC e dentro do repo rodar o comando
 
+```bundle exec jekyll serve```
+
+e clicar no link em ```Server address:``` .
 
 # FIM! 
