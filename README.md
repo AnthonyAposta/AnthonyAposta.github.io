@@ -54,7 +54,8 @@ queremos ver o resultado e realizar mudanças antes de atualizar o site diretame
  
 Veja qual sistema operacioal você está utilizando e instale as depedências:
 
-Ubuntu:<\br>
+Ubuntu:
+
 ```sudo apt-get install ruby-full build-essential zlib1g-dev```
 
 Fedora
