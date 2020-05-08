@@ -45,4 +45,39 @@ Sua publicação estará no endereço <code>anthonyaposta.github.io/ANO/MES/DIA/
 
 Agora você ja sabe como fazer posts. 
 
+# Rodando o site localmente
+
+É possivel editar os site diretamente pelo github, mas essa não é a melhor forma. Durante a edição de um novo conteudo 
+queremos ver o resultado e realizar mudanças antes de atualizar o site diretamente, isso pode ser feito rodando [Jekyll](https://jekyllrb.com/) (programa que gera o site) no seu computador.
+
+## Bora lá!
+ 
+Veja qual sistema operacioal você está utilizando e instale as depedências:
+
+Ubuntu:
+```sudo apt-get install ruby-full build-essential zlib1g-dev```
+
+Fedora
+```sudo dnf install ruby ruby-devel @development-tools```
+
+Debian
+```sudo apt-get install ruby-full build-essential```
+
+Gentoo Linux
+```sudo emerge -av jekyll```
+or
+```sudo emerge --ask --verbose jekyll```
+
+ArchLinux:
+```sudo pacman -S ruby base-devel```
+
+openSUSE:
+```sudo zypper install -t pattern devel_ruby devel_C_C++```
+
+Clear Linux:
+```sudo swupd bundle-add ruby-basic```
+
+As proximas instruções são comuns a todos os sistemas:
+
+
 # FIM! 
