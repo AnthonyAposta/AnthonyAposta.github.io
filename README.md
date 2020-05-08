@@ -58,36 +58,19 @@ Ubuntu:
 
 ```sudo apt-get install ruby-full build-essential zlib1g-dev```
 
-Fedora:
-
-```sudo dnf install ruby ruby-devel @development-tools```
-
 Debian:
 
 ```sudo apt-get install ruby-full build-essential```
-
-Gentoo Linux:
-
-```sudo emerge -av jekyll```
-or
-
-```sudo emerge --ask --verbose jekyll```
 
 ArchLinux:
 
 ```sudo pacman -S ruby base-devel```
 
-openSUSE:
-
-```sudo zypper install -t pattern devel_ruby devel_C_C++```
-
-Clear Linux:
-
-```sudo swupd bundle-add ruby-basic```
+Caso seu sistema não esteja listado, clique [aqui](https://jekyllrb.com/docs/installation/other-linux/).
 
 As proximas instruções são comuns a todos os sistemas:
 
-para configurar o caminho de instalação:
+Para configurar o caminho de instalação:
 
 ```
 echo '# Install Ruby Gems to ~/gems' >> ~/.bashrc
@@ -95,7 +78,7 @@ echo 'export GEM_HOME="$HOME/gems"' >> ~/.bashrc
 echo 'export PATH="$HOME/gems/bin:$PATH"' >> ~/.bashrc
 source ~/.bashrc
 ```
-para instalar:
+Para instalar:
 
 ```gem install jekyll bundler```
 
@@ -103,6 +86,8 @@ blz, agora é so clonar o repositorio no seu PC e dentro do repo rodar o comando
 
 ```bundle exec jekyll serve```
 
-e clicar no link em ```Server address:``` .
+clque no link em ```Server address:```  para abrir o site.
+
+Mais ifos sobre a instalação do Jekyll em [https://jekyllrb.com/docs/installation/ubuntu/](https://jekyllrb.com/docs/installation/ubuntu/)
 
 # FIM! 
