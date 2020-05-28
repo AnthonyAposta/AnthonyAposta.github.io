@@ -1,5 +1,5 @@
 ---
-short_name: Valéria Mattiello
+short_name: Lela
 name: Valéria Mattiello
 position: Mestranda em Física 
 ---
