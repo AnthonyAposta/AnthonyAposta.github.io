@@ -45,4 +45,49 @@ Sua publicação estará no endereço <code>anthonyaposta.github.io/ANO/MES/DIA/
 
 Agora você ja sabe como fazer posts. 
 
+# Rodando o site localmente
+
+É possivel editar os site diretamente pelo github, mas essa não é a melhor forma. Durante a edição de um novo conteudo 
+queremos ver o resultado e realizar mudanças antes de atualizar o site diretamente, isso pode ser feito rodando [Jekyll](https://jekyllrb.com/) (programa que gera o site) no seu computador.
+
+## Bora lá!
+ 
+Veja qual sistema operacioal você está utilizando e instale as depedências:
+
+Ubuntu:
+
+```sudo apt-get install ruby-full build-essential zlib1g-dev```
+
+Debian:
+
+```sudo apt-get install ruby-full build-essential```
+
+ArchLinux:
+
+```sudo pacman -S ruby base-devel```
+
+Caso seu sistema não esteja listado, clique [aqui](https://jekyllrb.com/docs/installation/other-linux/).
+
+As proximas instruções são comuns a todos os sistemas:
+
+Para configurar o caminho de instalação:
+
+```
+echo '# Install Ruby Gems to ~/gems' >> ~/.bashrc
+echo 'export GEM_HOME="$HOME/gems"' >> ~/.bashrc
+echo 'export PATH="$HOME/gems/bin:$PATH"' >> ~/.bashrc
+source ~/.bashrc
+```
+Para instalar:
+
+```gem install jekyll bundler```
+
+blz, agora é so clonar o repositorio no seu PC e dentro do repo rodar o comando
+
+```bundle exec jekyll serve```
+
+clique no link em ```Server address:```  para abrir o site.
+
+Mais infos sobre a instalação do Jekyll em [https://jekyllrb.com/docs/installation/ubuntu/](https://jekyllrb.com/docs/installation/ubuntu/)
+
 # FIM! 
