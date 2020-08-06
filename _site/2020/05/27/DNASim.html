@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="/assets/css/style.css?v=">
+    <!--<link rel="stylesheet" type="text/css" href="/assets/css/print.css" media="print">-->
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+<!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Fazendo simulações de DNA em solventes Mistos | Lab 208</title>
+<meta name="generator" content="Jekyll v3.8.6" />
+<meta property="og:title" content="Fazendo simulações de DNA em solventes Mistos" />
+<meta name="author" content="Café" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Após não achar nenhuma documentação decente para este problema específico, resolvi procurar em diversas fontes e mergulhar de cabeça. O problema é tirado de um desafio no final do tutorial B02 do site oficial do AMBER MD (um software de dinâmica molecular). No final do tutorial o autor sugere “Feel free to use what you have learned to experiment with alternative starting geometries. Do they all change to B-DNA if run for long enough? What about in a mixture of 80% water, 20% ethanol?” porém não da dicas de como proceder, e também não encontrei ninguém que tivesse enfrentado o problema na internet (?talvez na Deep web???). Bom agora não precisa mais, porque a porca solução está aqui. Mais informações podem ser encontradas no meu Github, em uma pagina dedicada." />
+<meta property="og:description" content="Após não achar nenhuma documentação decente para este problema específico, resolvi procurar em diversas fontes e mergulhar de cabeça. O problema é tirado de um desafio no final do tutorial B02 do site oficial do AMBER MD (um software de dinâmica molecular). No final do tutorial o autor sugere “Feel free to use what you have learned to experiment with alternative starting geometries. Do they all change to B-DNA if run for long enough? What about in a mixture of 80% water, 20% ethanol?” porém não da dicas de como proceder, e também não encontrei ninguém que tivesse enfrentado o problema na internet (?talvez na Deep web???). Bom agora não precisa mais, porque a porca solução está aqui. Mais informações podem ser encontradas no meu Github, em uma pagina dedicada." />
+<link rel="canonical" href="http://localhost:4000/2020/05/27/DNASim.html" />
+<meta property="og:url" content="http://localhost:4000/2020/05/27/DNASim.html" />
+<meta property="og:site_name" content="Lab 208" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-05-27T00:00:00-03:00" />
+<script type="application/ld+json">
+{"headline":"Fazendo simulações de DNA em solventes Mistos","dateModified":"2020-05-27T00:00:00-03:00","datePublished":"2020-05-27T00:00:00-03:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2020/05/27/DNASim.html"},"url":"http://localhost:4000/2020/05/27/DNASim.html","author":{"@type":"Person","name":"Café"},"description":"Após não achar nenhuma documentação decente para este problema específico, resolvi procurar em diversas fontes e mergulhar de cabeça. O problema é tirado de um desafio no final do tutorial B02 do site oficial do AMBER MD (um software de dinâmica molecular). No final do tutorial o autor sugere “Feel free to use what you have learned to experiment with alternative starting geometries. Do they all change to B-DNA if run for long enough? What about in a mixture of 80% water, 20% ethanol?” porém não da dicas de como proceder, e também não encontrei ninguém que tivesse enfrentado o problema na internet (?talvez na Deep web???). Bom agora não precisa mais, porque a porca solução está aqui. Mais informações podem ser encontradas no meu Github, em uma pagina dedicada.","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+    <div id="container">
+      <div class="inner">
+        <header>
+          <h1>Lab|208</h1>
+          <h2>Clusterizando conhecimento.</h2>
+        </header>
+        <section id="downloads" class="clearfix">
+	  <nav>
+  	    
+    	      <a href="/" class="button" >
+              <span>Home</span>
+              </a>
+            
+    	      <a href="/about.html" class="button" >
+              <span>Sobre</span>
+              </a>
+            
+    	      <a href="/blog.html" class="button" >
+              <span>Blog</span>
+              </a>
+            
+    	      <a href="/authors.html" class="button" >
+              <span>Membros</span>
+              </a>
+            
+          </nav>
+        </section>
+        <hr>
+        <section id="main_content">
+          <h1>Fazendo simulações de DNA em solventes Mistos</h1>
+<p>
+  27 May 2020
+
+  
+  
+    
+       
+         
+         - <a href="/authors/guscafe.html">Gustavo Café</a>
+       
+    
+  
+</p>
+<p>Após não achar nenhuma documentação decente para este problema específico, resolvi procurar em diversas fontes e mergulhar de cabeça. O problema é tirado de um desafio no final do tutorial B02 do site oficial do AMBER MD (um software de dinâmica molecular). No final do tutorial o autor sugere “Feel free to use what you have learned to experiment with alternative starting geometries. Do they all change to B-DNA if run for long enough? What about in a mixture of 80% water, 20% ethanol?” porém não da dicas de como proceder, e também não encontrei ninguém que tivesse enfrentado o problema na internet (<em>?talvez na Deep web???</em>). Bom agora não precisa mais, porque a porca solução está aqui. Mais informações podem ser encontradas no <a href="https://github.com/Coffee4MePlz/DNA_Mixed_Solution">meu Github</a>, em uma pagina dedicada.</p>
+
+<h2 id="disclaimer">Disclaimer</h2>
+<p>I have not ommited any of the simulation flaws, but I commented on them. Mostly because I think they are relevant to the learning process, and this is, after all, a Tutorial. I have hinted better ways to solve these problems so you can take the better path.</p>
+
+<h1 id="solving-tutorial-b1-final-challenge-a-dna-in-80water-20ethanol-solvent">Solving Tutorial B1 final challenge, A-DNA in 80%water 20%ethanol solvent</h1>
+
+<p align="center">
+ <img src="/assets/images/guscafe/Capa.jpg" alt="DNA em ethanol" width="620" />
+</p>
+
+<p>If you have been trough the <a href="http://ambermd.org/tutorials/basic/tutorial1/">Tutorial B1 from AMBER website</a>, first of all, congratulations, secondly, you have probably seen that there is an extra “Feel free to use what you have learned to experiment with alternative starting geometries. Do they all change to B-DNA if run for long enough? What about in a mixture of 80% water, 20% ethanol?” at the end. So I went for it. But as I could not find any ethanol solvent, things got messy pretty quickly. This is my attempt to solve the challenge. Also, this may be used for future reference on solving this extra, since I could not find anything that could guide me all the way through, I had to figure it out by myself. Feel free to follow these steps, if you want to save some of your time.</p>
+
+<p>Or, if you want to be brave, here are the links I found most usefull:</p>
+
+<ul>
+  <li><a href="http://m3g.iqm.unicamp.br/packmol/home.shtml">Packmol, a very usefull tool for building solvents</a></li>
+  <li><a href="https://ambermd.org/tutorials/advanced/tutorial15/Tutorial2.xhtml">AMBER Tutorial 15, for building molecules from zero</a></li>
+  <li><a href="http://pdb101.rcsb.org/learn/guide-to-understanding-pdb-data/introduction">A guide to understan PDB data</a></li>
+  <li><a href="http://chinthaka.wikidot.com/solventbox">This dudes own wiki</a></li>
+</ul>
+
+<p>If you found a better way to solve any of the steps below (for example, building the solvent first, then putting the DNA in, which is a more secure way of simulating) please contact me. I would be more than glad to add it to the repository. Now let’s get started</p>
+
+<hr />
+
+<h1 id="step-by-step">STEP BY STEP</h1>
+<hr />
+
+<h2 id="first-and-foremost-building-your-molecules">First and Foremost: Building your molecules</h2>
+
+<p>For the water molecules, there is a good enough .pdb file already, no need to make them. Also, Leap interprets them quite easily. The problem are the ethanols…</p>
+
+<p>I could not find any descent pdb file for ethanol. So I made my own! This is quite easy. First you need to enter Xleap, create a molecule and edit it. So, first enter the command <code class="highlighter-rouge">edit ETH</code>, then you will <strong>draw</strong> your atoms and bonds: two <strong>C</strong> and one <strong>O</strong> with single bonds. Don’t draw the <strong>H</strong>. Now click <code class="highlighter-rouge">Add H &amp; Build</code>,  next select your whole molecule with clicking and holding the left mouse button. Then select <code class="highlighter-rouge">Relax Selection</code> on the top menu. You will notice that Leap added the natural geometry for the ethanol.</p>
+
+<p>Ok, now save it with</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>savepdb ETH ETH.pdb
+</code></pre></div></div>
+
+<p>Now Let’s use <strong>Antechamber</strong> to create a file that carries all the charge information we want (i.e. coulombic information). On your terminal use the following command (you can type “-help” for more info)</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>antechamber -i ETH.pdb -fi pdb -o ETH.mol2 -fo mol2 -dr no -c bcc -nc 0
+</code></pre></div></div>
+
+<p><strong>-i</strong> is for input, <strong>-fi</strong> is for input filetype, <strong>-o</strong> output, <strong>-fo</strong> output filtype, <strong>-dr</strong> acdoctor mode (AMBER manual for more info), <strong>-c</strong> charge method, <strong>-nc</strong> net charge (molecular).</p>
+
+<p>Ok, now we want to create files that that fill missing parameters, if necessary. By now you probably realized how Leap overinterprets every single command. For that we’ll use <strong>Parmchk</strong>, to create the <em>frcmod</em> files we want.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>parmchk -i ETH.mol2 -f mol2 -o frcmod.eth
+</code></pre></div></div>
+
+<ul>
+  <li>Note: Leaps GAFF, and gaff.dat parameters, is probably enough (I haven’t tested these, without using parmchk, but you’re more than welcome to).</li>
+</ul>
+
+<h3 id="packmol">Packmol</h3>
+
+<p>Ok, time to build our system (You probably noticed that, when your solvate is not only water and ions, Leaps is a bit of a headache). You’ll have to build it out of Leap too.</p>
+
+<ul>
+  <li>Note: The smart thing to do here (which I didn’t do). Is to first build the solvate (eth + wat), relax it with some minimization (with sander), and then just add it to Leap’s library. Because in this way you will have it whenever you want. So you could just run some “solvate box yada yada yada” to get things going. But because I started the wrong way, I finished it with the same stuborn mindset. So here is what <strong>I</strong> did: Built it all together (solvate + DNA) then relaxed solvate with DNA fixed in place, then ran MD. Both breed the same result, for this very specific context. If you want to pursue the first one, check the last link in “usefull links” tab.</li>
+</ul>
+
+<p>Packmol only takes <em>.inp</em> files as input, in this fashion</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>packmol &lt; mixture.inp
+</code></pre></div></div>
+
+<p>I have commmented the mixture.inp file, if you want to know what each step does.</p>
+
+<p>The output should be a <em>a-dna_eth_water_solvate.pdb</em> file.</p>
+
+<p>Important: Put TER between resid 10 and 11 at the output file. (don’t know why this happens, but you can’t generate the topology files if there are atoms that Leap can’t understand, and leaving them wihtou TER, causes Leap to think they have the same name). For some reason packmol erases a ‘TER’ line between residues 10 and 11… can’t figure out why.</p>
+
+<p>If you have any further doubts you should check the link at the top to Packmol’s user guide.</p>
+
+<p>Now we are finally ready to load our files to XLeap!!</p>
+
+<h2 id="building-topology-files">Building Topology files</h2>
+
+<h3 id="xleap">XLeap</h3>
+
+<p>For building our topology and coordinates files just run the following commmands:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>loadamberparams gaff.dat 
+source leaprc.water.tip3p 
+loadAmberParams frcmod.tip3p 
+loadAmberParams frcmod.ionsjc_tip3p
+loadamberparams frcmod.eth
+ETH = loadmol2 ETH.mol2 
+DNA =  loadpdb a-dna_eth_water_solvate.pdb
+addions DNA Na+ 0
+set box DNA 80.0
+saveAmberparm DNA DNA.prmtop DNA.inpcrd
+quit
+</code></pre></div></div>
+<p>So actually we did not use TIP3P water, we used our own water.pdb. But we are using the frcmod.tip3p to interpret our water as TIP3P, neat eh?</p>
+
+<p>You can edit ETH and DNA to see if everything is ok.
+Also, If you went through Tutorial B1, all of these commands should make sense, except the “frcmod.eth” which we explained above, and the “set box DNA 80.0”. The last one is because, when running Sander, you have to specify the limits of your system, in this case we did it with Leap. I don’t quite understand why this isn’t a feature in packmol.</p>
+
+<hr />
+
+<h2 id="minimization--md">Minimization &amp; MD</h2>
+
+<p>There’s no much secret here. Just remember that the Tutorial is not up to date, and that you should write <strong>ntx = 5</strong> (not 7) on your <em>.in</em> file, if you want it to pick up from the previous one. Also, the following commands are for the directories in this repository as they are presented. One more thing, you should customize the <em>MPI</em> options to whatever suits best your installation and requirements.</p>
+
+<h2 id="minimization-not-holding-dna-fixed-its-a-dangerous-idea">Minimization (not holding DNA fixed, its a dangerous idea!)</h2>
+
+<p>This should run at the <em>Main</em> directory.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mpirun -np 4 $AMBERHOME/bin/sander.MPI -O -i DNAmin.in -o DNAmin.out -p dna.prmtop -c dna.inpcrd -x DNAmin.nc -r DNAmin1.ncrst -ref dna.inpcrd 
+</code></pre></div></div>
+
+<p>This takes approx 11min.</p>
+
+<h2 id="first-md-dna-weakly-fixed">First MD: (DNA weakly fixed)</h2>
+
+<p>This should run at the <em>MD1</em> directory.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mpirun -np 4 $AMBERHOME/bin/sander.MPI -O -i DNA_md1.in -o ../MD2/Output/DNA_md1.out -p ../dna.prmtop -c ../DNAmin1.ncrst -x ../MD2/Output/DNA_md1.nc -r ../MD2/Output/DNA_md1.ncrst -ref ../DNAmin1.ncrst
+</code></pre></div></div>
+
+<p>This takes approx 8 to 9min.</p>
+
+<h2 id="second-md">Second MD:</h2>
+
+<p>this should run at the <em>MD2</em> directory.</p>
+
+<p>There’s a <em>Run_10steps.x</em> script for continuous running (in 200ps chunks), dont forget to add the ‘chmod’ for access. Also, customize the <em>Run_10steps.x</em> file to suit your amber installation (with more or less CPU units, and directories).</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>chmod +x Run_10steps.x
+nohup ./Run_10steps.x &gt;&amp; run.log &amp;
+</code></pre></div></div>
+
+<p>Ok! Now after a long night (maybe 2?) of sleep you should be good to go! Since this takes around 20hs to finish.</p>
+
+<h1 id="conclusion">Conclusion</h1>
+
+<p>First, let’s take a look at our RMS fit plot !</p>
+<p align="center">
+ <img src="/assets/images/guscafe/RMSfit.png" alt="RMSfit" width="620" />
+</p>
+
+<p>It should be evident that our molecule is going through some transformation for the first 800ps. But it is not. Actually, if you run it on VMD, you will realize that it is actually doing a translational motion. You may be wondering why. If you check the minimization <em>.nc</em> file, you will see that, as soon as the simulation started, the ethanols just grabbed any other molecule that was around them, forming vacuum pouches. If we ran the minimization longer, these vacuum would probably be filled up, since the system tends to a more compact format. Since we did not run it as long as we should, the filling motion pushed the whole system a bit in a certain direction. If you check the RMS plot, you will notice that afterwards the DNA is stable, even thoug far from its initial position. This issue could be avoided if we actually ran the solvate separately, minimized it (long enough) and then solvated the DNA. This would be the right approach.</p>
+
+<p>We can see that our DNA did not change its basic form. It mantained its initial form. It is probable that the ethanol created some higher energy restraint, so that the temperature was not high enough for the molecule to overcome the new potential and slide to a global minimum. In a more uncientific way to put it: the ethanol “grabbed” the DNA molecule and created a bit of a tougher ribbon (a sort of cage), restraining its movement. .</p>
+
+<p>You can check the PlotsEPics directory for some images.</p>
+
+<p>Hope this gave you some intuition on how to proceed with more complex solvates. Let me know if you had any doubts or any contributions.</p>
+
+<p>Good Luck! :D</p>
+
+
+
+        </section>
+      </div>
+    </div>
+
+    
+  </body>
+</html>
