@@ -178,6 +178,16 @@ header h2 {
 #downloads {
   margin-bottom: 40px; }
 
+#footer {
+  margin: 0 auto;
+  max-width: 610px;
+  text-align: right;
+}
+
+#footer img {
+  cursor: pointer;
+}
+
 a.button {
   background-color: #111a24;
   border: none;
@@ -337,7 +347,7 @@ footer {
   margin-top: 40px;
   font-size: 13px;
   color: #aaa;
-  background: transparent url("../images/hr.png") 0 0 no-repeat; }
+  background: transparent url("../images/hr.png") 50% 0 no-repeat; }
 
 footer a {
   color: #666; }
